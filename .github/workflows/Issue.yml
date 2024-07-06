@@ -1,0 +1,12 @@
+name: issue event
+on:
+  issues:
+    types:
+      -opened
+jobs:
+  show-info:
+    runs-on: ubuntu-latest
+    steps:
+    - name: info
+      run: |
+        echo "on issue creation" 
