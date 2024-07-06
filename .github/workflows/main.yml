@@ -1,0 +1,35 @@
+name: node.js CI
+on: [push]
+jobs: #starts jobs encapsulation
+  build:
+    runs-on: ubuntu latest
+    steps:
+      - name: checkout code
+      - uses: actions/checkout@v4
+      - name: setup node.js
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build
+  #end of build encaptulation
+  test: #start of test job
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node.js
+        uses: actions/setup-nodejs@v4
+        with:
+          node-version: 14
+      - name: install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      #end of test encaptulation.
+        
+
+          
+
