@@ -9,6 +9,8 @@ jobs: #starts jobs encapsulation
       - name: setup node.js
         with:
           node-version: 14
+      - name: Run install
+        run : npm install
       - name: Install dependencies
         run: npm ci
       - name: build
@@ -24,6 +26,8 @@ jobs: #starts jobs encapsulation
         uses: actions/setup-nodejs@v4
         with:
           node-version: 14
+      - name: Run install
+        run: run npm install
       - name: install dependencies
         run: npm ci
       - name: Run tests
