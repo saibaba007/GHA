@@ -9,4 +9,4 @@ jobs:
     steps:
     - name: info
       run: |
-        echo "on issue creation" 
+        echo "on issue creation trigger" 
