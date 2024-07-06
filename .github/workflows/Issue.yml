@@ -2,7 +2,7 @@ name: issue event
 on:
   issues:
     types:
-      -opened
+      -opened,closed
 jobs:
   show-info:
     runs-on: ubuntu-latest
