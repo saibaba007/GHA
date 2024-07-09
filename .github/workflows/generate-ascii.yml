@@ -8,10 +8,10 @@ jobs:
         uses: actions/checkout@v4
       - name: list repo file 
         run: ls -ltra
-      - name: Execute shell script
+      - name: Executing shell script
         run: |
           chmod +x ascii-script.sh
-          GHA/.github/workflows/ascii-script.sh
+          ./ascii-script.sh
 
         
       #- name: Install cowsay Program
