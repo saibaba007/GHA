@@ -6,13 +6,16 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      - name: Install cowsay Program
-        run: sudo apt-get install cowsay -y
-      - name: execute cowsay command
-        run: cowsay -f dragon "Run for cover,I am a DRAGON .....RAWR">>dragon.txt
-      - name: Test file exists
-        run: grep -i "dragon" dragon.txt
-      - name: Read file
-        run: cat dragon.txt
       - name: list repo file 
         run: ls -ltra
+      - name: Execute shell script
+        run: ./ascii-script.sh
+      #- name: Install cowsay Program
+      # run: sudo apt-get install cowsay -y
+      #- name: execute cowsay command
+       # run: cowsay -f dragon "Run for cover,I am a DRAGON .....RAWR">>dragon.txt
+      #- name: Test file exists
+      #  run: grep -i "dragon" dragon.txt
+      #- name: Read file
+      # run: cat dragon.txt
+      
