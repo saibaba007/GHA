@@ -13,7 +13,7 @@ jobs:
       uses: docker/login-action@v2
       with: 
         reristry: ghac.io
-        username: ${{ github_actor }}
+        username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build and push image
       run: |
