@@ -1,0 +1,23 @@
+name: matrixexample
+on: workflow_dispatch
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04,ubuntu-20.04]
+        node: [18,24]
+    runs-on: ${{matrix.os}}
+    steps:
+    - name: actions checkout
+      uses: actions/checkout@v4
+    - name: setup nodejs
+      uses: actions/setupnode@v4
+      with:
+        node-version: ${{matrix.node}}
+    - name: install dependencies
+      run: npm install
+    - name: build the app
+      run: npm run build
+        
+      
+      
