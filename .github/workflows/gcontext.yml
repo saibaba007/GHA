@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+jobs:
+  Cotextbuild:
+    runs-on: ubuntu-latest
+    steps:
+    - name: display event information
+      run: |
+        echo "event Name:${{ github.event_name }}"
+        echo "Ref: {{ github.ref }}"
+        echo "SHA: {{ gihub.sha }}"
+      
